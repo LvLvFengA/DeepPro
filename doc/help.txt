@@ -1,0 +1,47 @@
+GitHub的使用：https://www.cnblogs.com/fengxiongZz/p/6477456.html
+git添加右键菜单：https://blog.csdn.net/weixin_39251617/article/details/79055820
+快速导包：Ctrl Shift O
+访问路径：http://localhost:9090/
+0001.application.properties自定义配置文件：
+	springboot配置文件在src/main/resource/application.properties
+	普通配置server.port=9090    指定端口号为9090
+			lvfeng.number=${random.int[1024,9999]}  随机端口
+			  为啥使用随机端口？因为在微服务springcloud中，是不需要记住IP或端口号，如果采取默认8080的话
+			  容易造成端口冲突，因此采用随机端口
+			lvfeng.msg=hello,i love you!    自定义配置
+			lvfeng.msg=hello,i love you! ${lvfeng.said}  可以追加同配置文件其他配置
+			lvfeng.number=${random.int}  配置随机数
+			
+0002.yml配置文件就是springboot新增的一种配置文件，全称YAML，确切的说是一种配置文件的语言
+	它和application.propertie所要完成的功能类似，要是造成冲突，可以重命名文件，后缀加上-temp
+	树状结构，例如【注意 冒号后面有空格】：
+	server:
+  		port: 9090
+	lvfeng:
+  		number: ${random.int}
+  		said: my lvfeng!
+0003.logback.xml文件，由log4j，logback的jar包支持，用来写入日志到文件或者控制台
+	这里的配置类似，可以直接拷贝其它工程文件，进行修改即可
+0004.多环境配置application-{profile}.properties
+	其中【profile】代表环境变量，例如【application-dev.properties】代表开发环境的配置，test就是测试环境
+0005.项目打包：在pom.xml上右键》run as》【第二个】Maven build...
+	Goals输入clean install，勾选skip tests，【此处编译采用JDK编译，因为jre没有编译的功能】
+	然后eclipse自动下载依赖库并且打包文件，在target目录下最后生成俩jar文件，一个是original是原始的，用另外的那个执行
+	执行语句【进到jar目录】：java -jar xxxxx.jar【生成的jar文件】 --pring.profiles.active=YY【环境变量，此处填写的是dev 或者test】
+0006.核心注解
+	@SpringBootApplication  程序入口类【按住Ctrl键单击进入】
+		@SpringBootConfiguration  和@Configuration的功能一样，用来代替XML的bean
+		@EnableAutoConfiguration  启动自动装配，就是添加jar到pom依赖中，根据jar自动配置【从起初配置文件为空可以反映出来】
+		@ComponentScan  开启扫描，扫描包以及它里面的注解，纳入到spring容器中，代替XML
+	@RestController  
+		@Controller 处理器，就是servlet容器
+		@ResponseBody 渲染json页面的入口注解【将一个controller方法返回的对象转换为json或者xml形式，写入response，是一个流的形式】
+	  @RequestMapping("/hello") 浏览器请求路径对应处理方法
+	  @Value("${lvfeng.msg}") 从配置文件读取变量
+0007.异常处理
+	@ControllerAdvice 处理全局异常【例子：com.lvfeng.test.exception.MyControllerAdvice】
+0008.自定义异常
+	
+	
+
+	

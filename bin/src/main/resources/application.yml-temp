@@ -1,0 +1,7 @@
+#一种配置文件语言，典型树状结构，定义属性值的时候必须加一个空格
+server:
+  port: 9090
+lvfeng:
+  number: ${random.int}
+  said: my lvfeng!
+  msg: hello,i love you! ${lvfeng.said}  ${lvfeng.number}

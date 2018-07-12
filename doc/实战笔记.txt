@@ -1,0 +1,6 @@
+spring boot实战笔记
+
+@SpringBootApplication	开启组件扫描注解，其中包含了以下三个注解
+	@Configuration  启动spring的java配置，省去xml配置
+	@ComponentScan  启动组件扫描，即是web控制器类等组件被发现并自动注册为bean，通过注解@Controller实现
+	@EnableAutoConfiguration  强大的自动配置

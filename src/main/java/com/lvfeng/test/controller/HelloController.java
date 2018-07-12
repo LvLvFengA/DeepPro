@@ -22,8 +22,9 @@ public class HelloController {
 //		return "于某人";
 		
 //		int no = 1 / 0;		//设置一个异常【测试普通异常】
-		throw new BusinessException("100","自定义异常：用户名错误！");//抛出自定义异常
+//		throw new BusinessException("100","自定义异常：用户名错误！");//抛出自定义异常
 		
 //		return this.msg;	//通过读取配置文件返回这个值
+		return "hello/";
 	}
 }

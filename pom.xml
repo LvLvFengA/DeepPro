@@ -25,6 +25,12 @@
 	</properties>
 <!-- 定义依赖库，全部依赖将存放于此 -->
 	<dependencies>
+		<!-- 启动开发模式，自动更新HTML静态资源 -->
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 		<!-- 两个springboot核心jar包 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

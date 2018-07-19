@@ -1,10 +1,14 @@
 package com.lvfeng.test.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lvfeng.test.exception.BusinessException;
+import com.lvfeng.tool.weather.pojo.WeatherWeek;
 
 //全局控制器
 @RestController
@@ -19,12 +23,12 @@ public class HelloController {
 	//请求域，用户直接请求这个目录的时候，使用这个方法
 	@RequestMapping("/hello")
 	public String index() {
-//		return "于某人";
-		
+//		return "于某人";	
 //		int no = 1 / 0;		//设置一个异常【测试普通异常】
-//		throw new BusinessException("100","自定义异常：用户名错误！");//抛出自定义异常
-		
+//		throw new BusinessException("100","自定义异常：用户名错误！");//抛出自定义异常	
 //		return this.msg;	//通过读取配置文件返回这个值
 		return "hello/";
 	}
+	
+
 }

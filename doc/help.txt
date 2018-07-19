@@ -1,5 +1,6 @@
 GitHub的clone：https://www.cnblogs.com/fengxiongZz/p/6477456.html
 GitHub的提交：https://blog.csdn.net/Xiong_IT/article/details/68944728
+更新：https://www.cnblogs.com/R-bear/p/7532264.html
 git添加右键菜单：https://blog.csdn.net/weixin_39251617/article/details/79055820
 快速导包：Ctrl Shift O
 访问路径：http://localhost:9090/

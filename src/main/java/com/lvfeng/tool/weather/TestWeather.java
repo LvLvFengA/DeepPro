@@ -1,13 +1,20 @@
 package com.lvfeng.tool.weather;
 
-
+import com.lvfeng.tool.change.JSONChange;
+import com.lvfeng.tool.weather.pojo.WeatherWeek;
 
 public class TestWeather {
 	public static void main(String[] args) throws Exception{
 		//城市列表，ak,sg,返回格式
 		String res = WeatherAPI.getWeatherWeek("1", WeatherAPI.APP_KEY_WEATHER, WeatherAPI.SIGN_WEATHER, "json");
 		System.out.println("结果集" + res);
-		
+		String res2 = WeatherAPI.getNowWeather("1", WeatherAPI.APP_KEY_WEATHER, WeatherAPI.SIGN_WEATHER, "json");
+		System.out.println("结果集2" + res2);
+		WeatherWeek wea = (WeatherWeek)JSONChange.jsonToObj(new WeatherWeek(), res);
+		System.out.println("是否成功？"+wea.getSuccess()+"结果集举例【城市名称】："+wea.getResult().get(0).getCitynm());
+		System.out.println("---------------------开始反转------------------");
+		String jsonStr = JSONChange.objToJson(wea);
+		System.out.println("反转结果："+jsonStr);
 		/* {
 		 * "success":"1",
 		 * "result":[{

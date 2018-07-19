@@ -1,0 +1,4 @@
+json处理
+	json有两种格式，对象格式，数组格式。
+	
+json常用注解	https://blog.csdn.net/u010457406/article/details/50921632

@@ -18,8 +18,8 @@ public class WeatherAPI {
 	/*
 	 * 00a.天气预报接口
 	 */
-	public static final String APP_KEY_WEATHER = "35230";	//KEY
-	public static final String SIGN_WEATHER = "75674fa122826e731718888eb7788098";	//SIGN
+	public static final String APP_KEY_WEATHER = "4kNIR306Kd4=";	//KEY
+	public static final String SIGN_WEATHER = "VNzi/wEgiqHr7mKNFz79eC7NiGvAdkF75dKF80mnwW8RTK0ncvlQhQ==";	//SIGN
 	/*
 	 * 001.获取一周的天气
 	 * @param 请求城市气象编码，请求APPKey，SignKey，返回数据格式

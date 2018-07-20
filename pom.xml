@@ -72,7 +72,18 @@
     		<artifactId>commons-codec</artifactId>
     		<version>1.9</version>
 		</dependency>
-		
+		<!-- apache的字符处理包，这里用来实现DES加密 -->
+		<dependency>
+    		<groupId>org.apache.commons</groupId>
+    		<artifactId>commons-lang3</artifactId>
+    		<version>3.4</version>
+		</dependency>
+		<!-- AES加密组件，支持jdk5到8 -->
+		<dependency>
+    		<groupId>org.bouncycastle</groupId>
+    		<artifactId>bcprov-jdk15on</artifactId>
+    		<version>1.58</version>
+		</dependency>
 		
 	</dependencies>
 <!-- 一个自带的打包工具 -->

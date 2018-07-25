@@ -1,32 +1,36 @@
-package com.lvfeng.tool.weather.pojo;
+package com.lvfeng.tool.weather.pojo.InsidePojo;
 /**
- * @author LvLvFeng
- * Weather子类，天气结果的返回值
+ * @author LvFeng
+ * 当前天气的结果集
  */
-public class Result {
-	private String weaid;	//本站【调用接口的这个站点】的城市ID编号
-	private String days;	//日期
-	private String week;	//周几
-	private String cityno;	//城市编码
-	private String citynm;	//城市名称
-	private String cityid;	//城市气象ID【标准】
-	private String temperature;	//气温
-	private String humidity;	//湿度【暂未使用】
-	private String weather;		//天气
-	private String weather_icon;	//白天的气象图标
-	private String weather_icon1;	//夜间的气象图标
-	private String wind;			//风向
-	private String winp;			//风力
-	private String temp_high;		//最高气温
-	private String temp_low;		//最低气温
-	private String humi_high;		//温度栏位【弃用】
-	private String humi_low;		//湿度栏位【弃用】
-	private String weatid;			//白天天气ID，可对照weather.wtype接口中weaid
-	private String weatid1;			//夜间天气ID，可对照weather.wtype接口中weaid
-	private String windid;			//风向ID(暂无对照表)
-	private String winpid;			//风力ID(暂无对照表)
-	private String weather_iconid;	//气象图标编号(白天),对应weather_icon 1.gif
-	private String weather_iconid1;	//气象图标编号(夜间),对应weather_icon1 0.gif
+public class ResultNowWeather {
+	 private String weaid;		//本站【调用接口的这个站点】的城市ID编号
+	 private String days;		//日期
+	 private String week;		//周几
+	 private String cityno;		//城市编码
+	 private String citynm;		//城市名称
+	 private String cityid;		//城市气象ID【标准】
+	 private String temperature;		//气温【区间】
+	 private String temperature_curr;	//温度变化曲线【应该指的是当前气温】
+	 private String humidity;			//湿度【暂未使用】
+	 private String aqi;				//空气质量指数
+	 private String weather;			//天气
+	 private String weather_curr;		//当前天气
+	 private String weather_icon;		//天气图标URL
+	 private String weather_icon1;		//图标1
+	 private String wind;			//风向
+	 private String winp;			//风力
+	 private String temp_high;		//最高气温【注：temp里的参数，是方便调用的int型，没有特殊符号】
+	 private String temp_low;		//最低气温
+	 private String temp_curr;		//当前气温
+	 private String humi_high;		//温度栏位【弃用】
+	 private String humi_low;		//湿度栏位【弃用】
+	 private String weatid;			//白天天气ID，可对照weather.wtype接口中weaid
+	 private String weatid1;		//夜间天气ID，可对照weather.wtype接口中weaid
+	 private String windid;			//风向ID(暂无对照表)
+	 private String winpid;			//风力ID(暂无对照表)
+	 private String weather_iconid;		//气象图标编号(白天),对应weather_icon 1.gif
+	 
 	public String getWeaid() {
 		return weaid;
 	}
@@ -69,17 +73,35 @@ public class Result {
 	public void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
+	public String getTemperature_curr() {
+		return temperature_curr;
+	}
+	public void setTemperature_curr(String temperature_curr) {
+		this.temperature_curr = temperature_curr;
+	}
 	public String getHumidity() {
 		return humidity;
 	}
 	public void setHumidity(String humidity) {
 		this.humidity = humidity;
 	}
+	public String getAqi() {
+		return aqi;
+	}
+	public void setAqi(String aqi) {
+		this.aqi = aqi;
+	}
 	public String getWeather() {
 		return weather;
 	}
 	public void setWeather(String weather) {
 		this.weather = weather;
+	}
+	public String getWeather_curr() {
+		return weather_curr;
+	}
+	public void setWeather_curr(String weather_curr) {
+		this.weather_curr = weather_curr;
 	}
 	public String getWeather_icon() {
 		return weather_icon;
@@ -116,6 +138,12 @@ public class Result {
 	}
 	public void setTemp_low(String temp_low) {
 		this.temp_low = temp_low;
+	}
+	public String getTemp_curr() {
+		return temp_curr;
+	}
+	public void setTemp_curr(String temp_curr) {
+		this.temp_curr = temp_curr;
 	}
 	public String getHumi_high() {
 		return humi_high;
@@ -159,11 +187,4 @@ public class Result {
 	public void setWeather_iconid(String weather_iconid) {
 		this.weather_iconid = weather_iconid;
 	}
-	public String getWeather_iconid1() {
-		return weather_iconid1;
-	}
-	public void setWeather_iconid1(String weather_iconid1) {
-		this.weather_iconid1 = weather_iconid1;
-	}
-	
 }

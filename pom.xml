@@ -78,12 +78,6 @@
     		<artifactId>commons-lang3</artifactId>
     		<version>3.4</version>
 		</dependency>
-		<!-- AES加密组件，支持jdk5到8 -->
-		<dependency>
-    		<groupId>org.bouncycastle</groupId>
-    		<artifactId>bcprov-jdk15on</artifactId>
-    		<version>1.58</version>
-		</dependency>
 		
 	</dependencies>
 <!-- 一个自带的打包工具 -->
@@ -95,6 +89,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
 </project>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DeepPro</title>
+<!-- 首页使用layUI布局，设置登录入口，为人脸识别预留接口 -->
+<link rel="icon" href="image/common/deep_pro.ico" type="image/x-icon" />
+<script src="plugin/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<!-- layui样式 -->
+<link rel="stylesheet" href="plugin/layui/layui/css/layui.css">
+<!-- <link rel="stylesheet" th:src="@{plugin/layui/layui/css/layui.css}"> -->
+
+<!-- layuiJS -->
+<script src="plugin/layui/layui/layui.js" type="text/javascript"></script>
+<style>
+body{
+	background-image: url('image/common/bg01.jpg');
+}
+</style>
+</head>
+<body>
+<ul class="layui-nav" id="ultheme">
+  <li class="layui-nav-item"><a href="#">DeepPro首页</a></li>
+<!--   <li class="layui-nav-item">
+    <a href="javascript:;">主题</a>
+    <dl class="layui-nav-child">
+      <dd><a href="#" onclick="theme1()" id="theme1">默认</a></dd>
+      <dd><a href="#" onclick="theme2()" id="theme2">浅蓝</a></dd>
+      <dd><a href="#" onclick="theme3()" id="theme3">墨绿</a></dd>
+    </dl>
+  </li> -->
+  <li class="layui-nav-item layui-this" ><a href="">系统登录</a></li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">办公实用程序</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">人脸签到</a></dd>
+      <dd><a href="">天气预报</a></dd>
+      <dd class="layui-this"><a href="">计算器</a></dd>
+      <dd><a href="#" id="calendar">日历</a></dd>
+      <dd><a href="">计算器</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item"><a href="">公司新闻</a></li>
+</ul>
+
+
+<p th:text="'我是文本输出'"></p>
+
+
+<div class="layui-form">
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <!-- <label class="layui-form-label">选择</label> -->
+      <div class="layui-input-inline">
+        <select name="quiz">
+          <option value="">选择年份</option>
+          <optgroup label="城市记忆">
+            <option value="你工作的第一个城市">你工作的第一个城市</option>
+          </optgroup>
+          <optgroup label="学生时代">
+            <option value="你的工号">你的工号</option>
+            <option value="你最喜欢的老师">你最喜欢的老师</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>	
+
+
+<script>
+layui.use(['element','form','layer'], function(){
+  var element = layui.element, //导航的hover效果、二级菜单等功能，需要依赖element模块
+  form = layui.form,	//引入表单元素控件
+  layer = layui.layer;	//弹出层组件
+  //监听导航点击
+  element.on('nav(demo)', function(elem){
+    //console.log(elem)
+    layer.msg(elem.text());
+  });
+  //弹出层
+  $('#calendar').click(function(){
+	  layer.open({
+		  title: "日历",
+		  type: 2,
+		  area: ['710px', '500px'],
+		  fixed: false, //不固定
+		  maxmin: false,	//不允许最大最小
+		  resize: false,	//禁止拉伸
+		  scrollbar: true,	//后边可以滚动
+		  content: ['miniapp/calendar/calendar.html','no']	//文件位置，禁止滚动条
+		});
+  });
+});
+</script>	
+</body>
+</html>

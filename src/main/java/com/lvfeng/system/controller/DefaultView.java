@@ -10,8 +10,8 @@ import org.springframework.web.servlet.ModelAndView;
  * 返回首页
  */
 
-@Configuration
-@RequestMapping("/") 
+//@Configuration
+//@RequestMapping("/") 
 public class DefaultView{
 	public ModelAndView index() {
         return new ModelAndView("index");

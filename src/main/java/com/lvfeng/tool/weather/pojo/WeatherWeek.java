@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.lvfeng.tool.weather.pojo.InsidePojo.Result;
 
 /**
  * @author Administrator
